@@ -14,10 +14,10 @@ function cheak($array, $connect)
     $item =  extract($item, EXTR_PREFIX_SAME, 'dat');
     $status = clearData($status);
     $number = clearData($number);
-    $price = clearData($price);
+    $price = (float)str_replace("&nbsp;","", htmlentities($price));
     $link = clearData($link);
-    $idLot = clearData($idLot);
-    $date = preg_replace("/&#?[a-z0-9]{2,8};/i", " ", $date);
+    $idLot = (int)clearData($idLot);
+    $date =date('Y-m-d H:i:s', strtotime(preg_replace("/&#?[a-z0-9]{2,8};/i", " ", $date)));
     $check = mysqli_query($connect, "SELECT * FROM `parserTab` WHERE `link` = '$link' and `idLot` = '$idLot'");
     if (mysqli_num_rows($check) > 0) {
         echo "Слот уже имеется " . 'Номер лота:' . $number . ' ссылка:' . $link . ' id:' . $idLot . ' дата:' . $date . ' статус:' . $status . ' сумма: ' . $price . "<br>";

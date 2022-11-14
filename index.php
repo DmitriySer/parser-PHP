@@ -61,3 +61,4 @@ $threeAr = array_slice($array, 5, 1);
 cheak($oneAr, $connect);
 cheak($twoAr, $connect);
 cheak($threeAr, $connect);
+

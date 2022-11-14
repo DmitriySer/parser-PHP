@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 06 2022 г., 14:30
+-- Время создания: Ноя 14 2022 г., 15:47
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -29,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `parserTab` (
   `number` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `date` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
+  `date` datetime NOT NULL,
   `link` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `idLot` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
-  `status` varchar(500) COLLATE utf8mb4_general_ci NOT NULL,
-  `price` varchar(500) COLLATE utf8mb4_general_ci NOT NULL
+  `idLot` int UNSIGNED NOT NULL,
+  `status` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `price` decimal(10,0) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 COMMIT;
 
